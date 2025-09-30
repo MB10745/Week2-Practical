@@ -8,6 +8,13 @@ static double CalculateArea(double length, double width)
     return area;
 }*/
 
+/*
+ * Practical 2
+ * Info: Methods Demo
+ * Version 1
+ * Author: Mahnoor Baig
+ * Date: 30th September 2025
+ */
 //Task 1 - PrintMenu Method
 Main();
 static void PrintMenu()
