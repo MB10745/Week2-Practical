@@ -16,7 +16,7 @@ static double CalculateArea(double length, double width)
  * Date: 30th September 2025
  */
 //Task 1 - PrintMenu Method
-Main();
+/*Main();
 static void PrintMenu()
 {
     Console.WriteLine("Please enter a valid option from below:");
@@ -74,5 +74,88 @@ static string GetMessage(string UserChoice)
             return "Goodbye";
         default:
             return "Please enter a valid option";
+    }
+}*/
+
+//Task 5 - Count Words
+/*Main();
+
+static void Main()
+{
+    Console.WriteLine("Enter a string:");
+    string str = Console.ReadLine();
+
+    Console.WriteLine($"The sentence you inputted is: {str}");
+
+    int CountWords = (str.Split(" ")).Length;
+    Console.WriteLine($"Number of Words = {CountWords}");
+}*/
+
+//Task 6 - Cipher
+static string Encrypt()
+{
+    Console.WriteLine("Enter a string you wish to encrypt:");
+    string input = Console.ReadLine();
+
+    Console.WriteLine("Enter number of rotations");
+    int UserRotations = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine($"The sentence you inputted is: {input}");
+
+    string EncryptText = "";
+    for (int i = 0; i < input.Length; i++)
+    {
+        char EncryptChar = (char)((int)input[i] + UserRotations);
+        EncryptText += EncryptChar;
+    }
+    return EncryptText;
+}
+
+//Task 7 - Decipher
+static string Decrypt()
+{
+    Console.WriteLine("Enter a string you wish to decrypt:");
+    string input = Console.ReadLine();
+
+    Console.WriteLine("Enter number of rotations");
+    int UserRotations = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine($"The sentence you inputted is: {input}");
+
+    string DecryptText = "";
+    for (int i = 0; i < input.Length; i++)
+    {
+        char DecryptChar = (char)((int)input[i] - UserRotations);
+        DecryptText += DecryptChar;
+    }
+    return DecryptText;
+}
+
+//Task 8 & 9
+Main();
+
+static void Main()
+{
+    Console.WriteLine("Main Menu");
+    Console.WriteLine("Select an option:");
+    Console.WriteLine("1 - encrypt text");
+    Console.WriteLine("2 - decrypt text");
+    Console.WriteLine("0 - End");
+
+    string UserChoice = Console.ReadLine();
+
+    if (UserChoice == "1")
+    {
+        string CipherText = Encrypt();
+        Console.WriteLine($"The encrypted sentence is now : {CipherText}");
+    }
+    else if (UserChoice == "2")
+    {
+        string DecipherText = Decrypt();
+        Console.WriteLine($"The decrypted sentence is now : {DecipherText}");
+    }
+    else
+    {
+        Environment.Exit(0);
     }
 }
