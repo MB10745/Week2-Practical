@@ -20,28 +20,52 @@ static void PrintMenu()
     Console.WriteLine("0. Exit Application");
 }
 
+//Task 4 - Put All Methods Together
 static void Main()
 {
-    PrintMenu();
-    string choice = Console.ReadLine();
-    switch(choice)
+    string UserOption;
+    do
+    {
+        PrintMenu();
+        UserOption = InputOption();
+        Console.WriteLine(GetMessage(UserOption));
+
+    } while (UserOption != "0");
+}
+
+//Task 2 - GetOption() Method
+static string InputOption()
+{
+    while (true)
+    {
+        try
+        {
+            string choice = Console.ReadLine();
+            return choice;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error:{ex.Message}. Please enter a valid operation.");
+        }
+    }
+}
+
+//Task 3 - GetMessage() Method
+static string GetMessage(string UserChoice)
+{
+    switch (UserChoice)
     {
         case "1":
-            Console.WriteLine("Bonjour");
-            break;
+            return "Bonjour";
         case "2":
-            Console.WriteLine("Hola");
-            break;
+            return "Ola";
         case "3":
-            Console.WriteLine("Hallo");
-            break;
+            return "Hallo";
         case "4":
-            Console.WriteLine("Salve");
-            break;
+            return "Ciao";
         case "0":
-            break;
+            return "Goodbye";
         default:
-            Console.WriteLine("Invalid choice");
-            break;
+            return "Please enter a valid option";
     }
 }
